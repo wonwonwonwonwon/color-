@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Project</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bgm-player" loop style="display:none;"></audio>
+
+    <div class="fixed-title">
+        <span class="title-word">Color :</span>
+    </div>
+
+    <div class="scroll-container" id="scrollContainer">
+        <div class="horizontal-pages">
+            
+            <section class="page" data-bg="#FFFFFF" data-text="#000000" data-line="rgba(0,0,0,0.15)" data-music="music/track1.mp3">
+                <div class="content-area">
+                    <div class="column page-title">
+                        <div class="animate-box"><h2 class="animate-text">Red</h2></div>
+                    </div>
+                    <div class="column meta-info">
+                        <div class="animate-box"><p class="animate-text d-1">Case by case</p></div>
+                        <div class="animate-box"><span class="animate-text d-2">상황에 따른 색상의 역할</span></div>
+                    </div>
+                    <div class="column long-desc">
+                        <div class="animate-box">
+                            <p class="animate-text d-3">
+                                색상은 정말 고정되어 있는 이미지로만 사용이 가능한 것일까? 상황에 따라 의미가 바뀌는 언어로 작용하는 것일까. 
+                              이 사이트에서는 색상의 언어적 역할과 기호로써 작용되는 모습을 탐구해봅니다. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" data-bg="#c6c6c6" data-text="#000000" data-line="rgba(0,0,0,0.15)" data-music="music/track2.mp3">
+                <div class="content-area">
+                    <div class="column page-title">
+                        <div class="animate-box"><h2 class="animate-text">Wiki</h2></div>
+                    </div>
+                    <div class="column meta-info">
+                        <div class="animate-box"><p class="animate-text d-1">Jane Doe</p></div>
+                        <div class="animate-box"><span class="animate-text d-2">색채 연구가</span></div>
+                    </div>
+                    <div class="column long-desc">
+                        <div class="animate-box">
+                            <p class="animate-text d-3">
+                                색상 이론과 역사를 집대성한 온라인 백과사전 프로젝트입니다. 
+                                색의 정의, 심리학적 효과, 문화별 해석 등 방대한 정보를 중립적이고 체계적으로 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" data-bg="#111111" data-text="#FFFFFF" data-line="rgba(255,255,255,0.2)" data-music="music/track3.mp3">
+                <div class="content-area">
+                    <div class="column page-title">
+                        <div class="animate-box"><h2 class="animate-text">Inversion</h2></div>
+                    </div>
+                    <div class="column meta-info">
+                        <div class="animate-box"><p class="animate-text d-1">RED INVERSION</p></div>
+                        <div class="animate-box"><span class="animate-text d-2">붉은 색을 제거해, 반전된 해석을 드러낸다. </span></div>
+                    </div>
+                    <div class="column long-desc">
+                        <div class="animate-box">
+                            <p class="animate-text d-3">
+                                빨강은 늘 강렬하고 긍정적인 상징으로 등장해왔다. 하지만 여기에서는 빨간 필터를 통해 그 색을 지워보며, 우리가 보지 못했던 다른 장면을 드러낸다. 붉음이 사라질 때, 화면에 남는 것을 통해 한 가지 색상문화를 다른 시선으로 다시 보도록 제안한다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page last-page" data-bg="#000000" data-text="#FFFFFF" data-line="rgba(255,255,255,0.2)">
+                <div class="link-container">
+                    <div class="link-item">
+                        <h2 class="link-title">Color Red</h2>
+                        <a href="#" class="link-btn">Go to Site →</a>
+                    </div>
+                    <div class="link-item">
+                        <h2 class="link-title">Color Wiki</h2>
+                        <a href="https://wonwonwonwonwon.github.io/ColorWiki/" class="link-btn">Go to Site →</a>
+                    </div>
+                    <div class="link-item">
+                        <h2 class="link-title">Color Inversion</h2>
+                        <a href="https://leeseonyeong1218.github.io/Color_Inversion/" class="link-btn">Go to Site →</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

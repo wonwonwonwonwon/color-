@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro</title>
+    <style>
+        /* 1. 전체 화면 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            background-color: #f0f0f0; /* 배경색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; 
+            position: relative;
+        }
+
+        /* 2. 중앙 텍스트 디자인 (폰트 변경됨) */
+        h1 {
+            /* 여기에 Times New Roman 적용 */
+            font-family: 'Times New Roman', Times, serif; 
+            font-size: 6rem;
+            letter-spacing: 0px;
+            color: #333;
+            z-index: 10; 
+            pointer-events: none; 
+            user-select: none;
+            font-weight: bold; /* 얇은 느낌을 원하시면 normal, 두꺼운건 bold */
+        }
+
+    
+        /* 3. 물결(Ripple) 효과 디자인 */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6); 
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
+            animation: ripple-animation 1s linear forwards; 
+        }
+
+        /* 4. 애니메이션 정의 */
+        @keyframes ripple-animation {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            100% {
+                width: 2500px; 
+                height: 2500px;
+                opacity: 0;    
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <h1>Color :</h1>
+
+    <script>
+        document.body.addEventListener('click', function(e) {
+            
+            // 1. 물결 만들기
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple'); 
+
+            // 2. 위치 잡기
+            const x = e.clientX;
+            const y = e.clientY;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            // 3. 화면에 표시
+            document.body.appendChild(ripple);
+
+            // 4. 0.8초 뒤에 페이지 이동 (파일명 확인!)
+            setTimeout(() => {
+    // 👇 'main/' 을 앞에 붙여주세요!
+    window.location.href = 'project.html'; 
+}, 800);
+        });
+    </script>
+</body>
+</html>
