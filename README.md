@@ -1,2 +1,0 @@
-# MyHappyDay
-MyHappyDay test
