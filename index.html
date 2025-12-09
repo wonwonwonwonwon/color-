@@ -2,34 +2,88 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Wiki</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Intro</title>
+    <style>
+        /* 1. 전체 화면 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; 
+            background-color: #f0f0f0; /* 배경색 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; 
+            position: relative;
+        }
+
+        /* 2. 중앙 텍스트 디자인 (폰트 변경됨) */
+        h1 {
+            /* 여기에 Times New Roman 적용 */
+            font-family: 'Times New Roman', Times, serif; 
+            font-size: 6rem;
+            letter-spacing: 0px;
+            color: #333;
+            z-index: 10; 
+            pointer-events: none; 
+            user-select: none;
+            font-weight: bold; /* 얇은 느낌을 원하시면 normal, 두꺼운건 bold */
+        }
+
+    
+        /* 3. 물결(Ripple) 효과 디자인 */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6); 
+            transform: translate(-50%, -50%); 
+            pointer-events: none; 
+            animation: ripple-animation 1s linear forwards; 
+        }
+
+        /* 4. 애니메이션 정의 */
+        @keyframes ripple-animation {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            100% {
+                width: 2500px; 
+                height: 2500px;
+                opacity: 0;    
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="top-bar"></div>
 
-    <div class="main-container">
-        <div class="grid-container" id="gridContainer">
-            <div class="center-area" id="centerArea">
-                <img src="title.png" id="mainTitle" class="title-logo" alt="Color Wiki">
-                
-                <div id="descriptionBox" class="description-box">
-                    <h2 id="brandTitle"></h2>
-                    <div id="brandStoryContent" class="story-content"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <h1>Color :</h1>
 
-    <a href="https://leeseonyeong1218.github.io/Color_Inversion/" class="next-button">Next</a>
+    <script>
+        document.body.addEventListener('click', function(e) {
+            
+            // 1. 물결 만들기
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple'); 
 
-    <div class="rainbow-bar"></div>
+            // 2. 위치 잡기
+            const x = e.clientX;
+            const y = e.clientY;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
 
-    <audio id="bgmPlayer" loop>
-        <source src="bgm.mp3" type="audio/mpeg">
-    </audio>
+            // 3. 화면에 표시
+            document.body.appendChild(ripple);
 
-    <script src="script.js"></script>
+            // 4. 0.8초 뒤에 페이지 이동 (파일명 확인!)
+            setTimeout(() => {
+    // 👇 'main/' 을 앞에 붙여주세요!
+    window.location.href = 'project.html'; 
+}, 800);
+        });
+    </script>
 </body>
 </html>
